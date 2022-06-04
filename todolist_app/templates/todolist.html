@@ -11,6 +11,8 @@
 <div class="container">
   <br>
   <form method="POST" class="row">
+    <!-- To post data to database safely CSRF Token is Used -->
+    {% csrf_token %}
     <label class="col-lg-3">Your Task for Today:</label>
     <input type="text" class="col-lg-6" name="task" placeholder="New Task ???">
     <button type="submit" style="margin-left: 5px;"  class="btn btn-primary col-lg-2">Add Task</button>
