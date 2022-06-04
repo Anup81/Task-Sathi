@@ -12,13 +12,13 @@ def todolist(request):
 
 def contact(request):
     context = {
-        'welcome_text': "Welcome to the Contact Page",
+        'contact_text': "Welcome to the Contact Page",
     }
     return render(request, 'contact.html', context)
 
 
 def about(request):
     context = {
-        'welcome_text': "Welcome to the About Page",
+        'about_text': "Welcome to the About Page",
     }
     return render(request, 'about.html', context)
