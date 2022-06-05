@@ -10,12 +10,27 @@
 {% block content %}
 <div class="container">
   <br>
+  <!-- {% if message %}
+  {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %} -->
+  {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+
   <form method="POST" class="row">
     <!-- To post data to database safely CSRF Token is Used -->
     {% csrf_token %}
     <label class="col-lg-3">Your Task for Today:</label>
     <input type="text" class="col-lg-6" name="task" placeholder="New Task ???">
-    <button type="submit" style="margin-left: 5px;"  class="btn btn-primary col-lg-2">Add Task</button>
+    <button type="submit" style="margin-left: 5px;" class="btn btn-primary col-lg-2">Add Task</button>
   </form>
   <br>
   <table class="table table-sm text-center">
