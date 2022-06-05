@@ -48,15 +48,15 @@
       {% if obj.done %}
       <tr class="table-success row">
         <td class="col-7"><del>{{obj.task}}</del></td>
-        <td class="col-3"><a href=""><button type="button" class="btn btn-dark">Mark this Pending</button></a></td>
-        <td class="col-1"><a href=""><button type="button" class="btn btn-warning">Edit</button></a></td>
+        <td class="col-3"><a href="{% url 'pending_task' obj.id %}"><button type="button" class="btn btn-dark">Mark this Pending</button></a></td>
+        <td class="col-1"><a href="{% url 'edit_task' obj.id %}"><button type="button" class="btn btn-warning">Edit</button></a></td>
         <td class="col-1"><a href="{% url 'delete_task' obj.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
       </tr>
       {% else %}
       <tr class="table-danger row">
         <td class="col-7">{{obj.task}}</td>
-        <td class="col-3"><a href=""><button type="button" class="btn btn-dark">Mark this Completed</button></a></td>
-        <td class="col-1"><a href=""><button type="button" class="btn btn-warning">Edit</button></a></td>
+        <td class="col-3"><a href="{% url 'complete_task' obj.id %}"><button type="button" class="btn btn-dark">Mark this Completed</button></a></td>
+        <td class="col-1"><a href="{% url 'edit_task' obj.id %}"><button type="button" class="btn btn-warning">Edit</button></a></td>
         <td class="col-1"><a href="{% url 'delete_task' obj.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
       </tr>
       {% endif %}
